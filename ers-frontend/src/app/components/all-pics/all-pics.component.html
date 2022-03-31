@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h3>Request Images</h3>
+    <hr>
+    
+        <ng-container *ngFor="let image of retrievedImages; let i = index">
+            <ng-container *ngFor="let id of retrievedIds; let j = index">
+                <ng-container *ngIf="i===j">
+                    <div>
+                    <h2>Image Id: {{ id }}</h2>    
+                    <img [src]="image" alt="" height="250"/>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+
+</div>

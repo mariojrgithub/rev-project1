@@ -1,0 +1,25 @@
+<div class="container">
+    <h3>Resolved Requests</h3>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Expense ID</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Employee ID</th>
+            <th>Request Date</th>
+            <th>Adjudicated Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of requests">
+            <td>{{ request.expenseId }}</td>
+            <td>{{ request.expenseAmount }}</td>
+            <td>{{ request.expenseStatus }}</td>
+            <td>{{ request.employeeId }}</td>
+            <td>{{ request.requestDate | date: 'medium' }}</td>
+            <td>{{ request.adjudicatedDate | date: 'medium' }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

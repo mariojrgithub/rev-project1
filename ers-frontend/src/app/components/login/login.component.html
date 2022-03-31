@@ -1,0 +1,49 @@
+<div class="container">
+    <h3>Employee Login</h3>
+  
+    <div>
+      <div class="card m-5">
+        <div class="card-header bg-success text-white">Login</div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3 mt-3">
+                <label for="employeeEmail" class="form-label">Email:</label>
+                <input
+                  required
+                  type="text"
+                  class="form-control"
+                  id="employeeEmail"
+                  placeholder="Enter your email"
+                  name="employeeEmail"
+                  [(ngModel)]="newEmployee.employeeEmail"
+                  />
+              </div>
+            
+            <div class="mb-3 mt-3">
+              <label for="employeePassword" class="form-label">Password:</label>
+              <input
+                required
+                type="password"
+                class="form-control"
+                id="employeePassword"
+                placeholder="Enter your password"
+                name="employeePassword"
+                [(ngModel)]="newEmployee.employeePassword"
+              /> 
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="employeeRole" class="form-label">Role: </label>
+              <select name="employeeRole" id="employeeRole" [(ngModel)]="newEmployee.employeeRole">
+                <option *ngFor="let selection of selections" [value]="selection">{{ selection }}</option>
+              </select>
+            </div>              
+          </form>
+        </div>
+        <div class="card-footer bg-success">
+          <button type="button" class="btn btn-light" (click)="retrieveEmployee()">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
